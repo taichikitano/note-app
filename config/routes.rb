@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get 'notes/index'
+  root to: "notes#index"
 
-  # Defines the root path route ("/")
-  # root "articles#index"
 end

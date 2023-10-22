@@ -1,0 +1,88 @@
+.header {
+  background-color: #1a2546;
+  height: 60px;
+}
+
+.wrapper {
+  display: flex;
+}
+.side-bar {
+  background-color: #3b394d;
+  width: 200px;
+  height: 100vh;
+  padding: 20px;
+}
+
+.create-folder a {
+  font-size: 10px;
+  color: darkgray;
+  text-decoration: none;
+}
+
+.side-contents {
+  background-color: #3b394d;
+  height: calc(100vh - 60px);
+  padding: 0 20px;
+  overflow: scroll;
+}
+
+.folder {
+  padding: 20px 0 40px;
+}
+
+.folder-name a {
+  text-decoration: none;
+  color: white;
+}
+
+
+.main-note {
+  background-color: #aaa;
+  width: 300px;
+  height: 100vh;
+  padding: 20px;
+  overflow: scroll;
+}
+
+.note-header {
+  background-color: #e7e7e7;
+  margin-right: 40px;
+}
+
+.create-note a {
+  text-decoration: none;
+}
+
+.note {
+  margin: 20px 40px 0 0;
+  background-color: #e7e7e7;
+}
+
+.note-title {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.note-user {
+  color: #434a54;
+  font-size: 12px;
+}
+
+.note-date {
+  color: #999;
+  font-size: 12px;
+}
+
+.note-content {
+  color: #434a54;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+
+
+.edit-note {
+  background-color: #e7e7e7;
+  width: calc(100vw - 500px);
+  height: 100vh;
+}
