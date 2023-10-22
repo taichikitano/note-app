@@ -1,24 +1,52 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# テーブル設計
 
-Things you may want to cover:
+## users テーブル
 
-* Ruby version
+| Column             | Type   | Options     |
+| ------------------ | ------ | ----------- |
+| name               | string | null: false |
+| email              | string | null: false |
+| encrypted_password | string | null: false |
 
-* System dependencies
+### Association
+- has_many :folder_users
+- has_many :folders, through: :folder_users
+- has_many :notes
 
-* Configuration
 
-* Database creation
+## folders テーブル
 
-* Database initialization
+| Column | Type   | Options     | 
+| ------ | ------ | ----------- |
+| name   | string | null: false |
 
-* How to run the test suite
+### Association
+- has_many :folder_users
+- has_many :users, through: :folder_users
+- has_many :notes
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## room_users テーブル
 
-* ...
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| folder | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to :folder
+- belongs_to :user
+
+## messages テーブル
+
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| content | string     |                                |
+| user    | references | null: false, foreign_key: true |
+| folder  | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to :folder
+- belongs_to :user
