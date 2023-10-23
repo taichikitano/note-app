@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_22_175152) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_23_145532) do
   create_table "folder_users", charset: "utf8", force: :cascade do |t|
     t.bigint "folder_id", null: false
     t.bigint "user_id", null: false
@@ -24,6 +24,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_22_175152) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "notes", charset: "utf8", force: :cascade do |t|
+    t.string "content"
+    t.bigint "folder_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["folder_id"], name: "index_notes_on_folder_id"
+    t.index ["user_id"], name: "index_notes_on_user_id"
   end
 
   create_table "users", charset: "utf8", force: :cascade do |t|
@@ -41,4 +51,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_22_175152) do
 
   add_foreign_key "folder_users", "folders"
   add_foreign_key "folder_users", "users"
+  add_foreign_key "notes", "folders"
+  add_foreign_key "notes", "users"
 end

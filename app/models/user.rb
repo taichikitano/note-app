@@ -8,5 +8,6 @@ class User < ApplicationRecord
 
   has_many :folder_users
   has_many :folders, through: :folder_users
+  has_many :notes
 
 end
