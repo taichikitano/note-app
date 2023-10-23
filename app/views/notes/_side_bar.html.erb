@@ -7,7 +7,7 @@
   <% current_user.folders.each do |folder| %>
     <div class="folder">
       <div class="folder-name">
-        <a href="#"><%= folder.name %></a>
+        <%= link_to folder.name, folder_notes_path(folder) %></a>
       </div>
     </div>
   <% end %>

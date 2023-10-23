@@ -1,8 +1,8 @@
 <div class="edit-note">
-  <div class="form">
+  <%= form_with model: [@folder, @note], class: 'form', local: true do |f| %>
     <div class="form-input">
-      <input class="form-message" placeholder= "type a message">
+        <%= f.text_field :content, class: 'form-message', placeholder: 'type a message' %>
     </div>
-    <input class="form-submit" type="submit" value="保存">
-  </div>
+    <%= f.submit '保存', class: 'form-submit' %>
+  <% end %>
 </div>
