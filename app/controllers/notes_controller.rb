@@ -3,6 +3,7 @@ class NotesController < ApplicationController
   def index
     @note = Note.new
     @folder = Folder.find(params[:folder_id])
+    @notes = @folder.notes.includes(:user)
   end
 
   def create
@@ -11,6 +12,7 @@ class NotesController < ApplicationController
     if @note.save
       redirect_to folder_notes_path(@folder)
     else
+      @notes = @folder.notes.includes(:user)
       render :index, status: :unprocessable_entity
     end
   end
