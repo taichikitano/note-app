@@ -5,9 +5,21 @@
     </div>
     <div class="note-header">
         <div class="create-note">
-          <a href="#">➕新規ノート</a>
+          <%= link_to "➕新規ノートを作成", new_folder_note_path %>
         </div>
     </div>
   </div>
-  <%= render partial: 'notes', collection: @notes %>
+  <% @folder.notes.each do |note| %>
+    <div class="note">
+      <div class="note-content">
+        <%= link_to note.content, edit_folder_note_path(@folder, note) %>
+      </div>
+      <div class="note-user">
+        <%= note.user.name %>
+      </div>
+      <div class="note-date">
+        <%= l note.created_at %>
+      </div>
+    </div>
+   <% end %>
 </div>
