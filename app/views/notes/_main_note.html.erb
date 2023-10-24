@@ -11,6 +11,9 @@
   </div>
   <% @folder.notes.each do |note| %>
     <div class="note">
+      <div class="note-title">
+        <%= link_to note.title, edit_folder_note_path(@folder, note) %>
+      </div>
       <div class="note-content">
         <%= link_to note.content, edit_folder_note_path(@folder, note) %>
       </div>
