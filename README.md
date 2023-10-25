@@ -43,6 +43,7 @@
 
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
+| title   | string     |                                |
 | content | string     |                                |
 | user    | references | null: false, foreign_key: true |
 | folder  | references | null: false, foreign_key: true |
