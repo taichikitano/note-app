@@ -28,7 +28,7 @@
 - has_many :notes
 
 
-## room_users テーブル
+## folder_users テーブル
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
@@ -39,7 +39,7 @@
 - belongs_to :folder
 - belongs_to :user
 
-## messages テーブル
+## notes テーブル
 
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
