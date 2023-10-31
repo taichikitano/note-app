@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_23_200627) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_31_064933) do
   create_table "folder_users", charset: "utf8", force: :cascade do |t|
     t.bigint "folder_id", null: false
     t.bigint "user_id", null: false
@@ -27,7 +27,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_23_200627) do
   end
 
   create_table "notes", charset: "utf8", force: :cascade do |t|
-    t.string "content"
+    t.text "content"
     t.bigint "folder_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
