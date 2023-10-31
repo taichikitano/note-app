@@ -5,11 +5,11 @@
   justify-content: space-between;
 }
 
-.logo {
+.logo a {
   color: #e7e7e7;
   font-size: 35px;
-  margin: 10px;
-
+  margin: 20px;
+  text-decoration: none;
 }
 
 .header-name a {

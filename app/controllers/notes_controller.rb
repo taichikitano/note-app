@@ -32,7 +32,7 @@ class NotesController < ApplicationController
     @note = Note.find(params[:id])
     @folder = Folder.find(params[:folder_id])
     if @note.update(note_params)
-      redirect_to edit_folder_note_path(@folder, @note), notice: 'ノートが更新されました'
+      redirect_to edit_folder_note_path(@folder, @note)
     else
       @notes = @folder.notes.includes(:user)
       render :edit, status: :unprocessable_entity
